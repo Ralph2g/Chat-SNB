@@ -1,4 +1,4 @@
-package pack;
+package Chat;
 import java.net.*;
 import java.io.*; 
 import java.util.ArrayList;

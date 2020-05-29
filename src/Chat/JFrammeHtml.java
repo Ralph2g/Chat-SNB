@@ -1,4 +1,4 @@
-package pack;
+package Chat;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -269,7 +269,7 @@ public class JFrammeHtml extends javax.swing.JFrame {
         });
                             
     try {          
-        NetworkInterface ni = NetworkInterface.getByName("wlan1");
+        NetworkInterface ni = NetworkInterface.getByName("wlan3");
         InetSocketAddress dir = new InetSocketAddress(MCAST_PORT);
 	try {
             remote = new InetSocketAddress(MCAST_ADDR, MCAST_PORT);
