@@ -16,7 +16,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class JFrammeHtml extends javax.swing.JFrame {
+public class ChatSockNoBlock extends javax.swing.JFrame {
     public static final String MCAST_ADDR  = "230.0.0.1"; //dir clase D valida, grupo al que nos vamos a unir
     public static final int MCAST_PORT = 4000;//puerto multicast
     public static final int DGRAM_BUF_LEN=2000; //tamaño del buffer
@@ -27,7 +27,7 @@ public class JFrammeHtml extends javax.swing.JFrame {
     public static ArrayList <String> usuariosConectados = new ArrayList<>();
     ByteBuffer b2 = null;
     
-    public JFrammeHtml() {
+    public ChatSockNoBlock() {
         try {
             //Conectandose al canal
             nickname = JOptionPane.showInputDialog("Ingrese su nickname");
@@ -251,20 +251,21 @@ public class JFrammeHtml extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrammeHtml.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatSockNoBlock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrammeHtml.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatSockNoBlock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrammeHtml.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatSockNoBlock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrammeHtml.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatSockNoBlock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrammeHtml().setVisible(true);
+                new ChatSockNoBlock().setVisible(true);
             }
         });
                             
@@ -300,10 +301,10 @@ public class JFrammeHtml extends javax.swing.JFrame {
                         b.flip();
                         String eco = "";
                         eco = new String (b.array (), 0, b.limit ());
-                        eco = eco.replace(":o", "<img src=\"file:src\\Imagenes\\imagen_beso.jpg\" width=30 height=30/>");
-                        eco = eco.replace(";)", "<img src=\"file:src\\Imagenes\\imagen_guino.jpg\" width=30 height=30/>");
-                        eco = eco.replace(":S", "<img src=\"file:src\\Imagenes\\imagen_gesto.jpg\" width=30 height=30/>");
-                        eco = eco.replace("_Perro_", "<img src=\"file:src\\Imagenes\\perro.gif\" width=100 height=100/>");
+                        eco = eco.replace(":o", "<img src=\"https://images.emojiterra.com/google/android-10/share/1f618.jpg\" width=40 height=40/>");
+                        eco = eco.replace(";)", "<img src=\"https://images.emojiterra.com/google/android-10/share/1f60a.jpg\" width=30 height=30/>");
+                        eco = eco.replace(":S", "<img src=\"https://images.emojiterra.com/google/android-10/share/1f974.jpg\" width=30 height=30/>");
+                        eco = eco.replace("_Perro_", "<img src=\"https://ih1.redbubble.net/image.465654661.2703/flat,750x,075,f-pad,750x1000,f8f8f8.u5.jpg\" width=100 height=100/>");
                         eco = eco.replace("_Homero_", "<img src=\"http://tusimagenesde.com/wp-content/uploads/2015/01/gifs-animados-5.gif\"/>");
                         if (eco.contains("<inicio>")&&!eco.contains("<inicio>"+nickname)){
                             String usuario = eco.replace("<inicio>", "");
